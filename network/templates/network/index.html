@@ -1,8 +1,58 @@
 {% extends "network/layout.html" %}
 
 {% block body %}
-    <div data-page="allPosts">
+    <div id="allposts">
+        <h1>All Posts</h1>
+        <div class="box">
+            <div id="div-form">
+                <h4>New Post</h4>
+                <div id="error-message" class="alert alert-danger"></div>               
+                <form id="post-form">
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" placeholder="Body" rows="5"></textarea>
+                        <input type="button" id="post-form-submit" class="btn btn-primary"/ value="Post">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="box">
+            <div id="post-list" />
+            <script type="text/babel">
+                class PostList extends React.Component {
+
+                    constructor(props) {
+                    super(props);
+                    this.state = {
+                        posts: global_posts;
+                    };
+                    }
+
+                    render() {
+                        let html_posts = ""; 
+                        let posts = [];
+                        for (post of posts) {
+                            print("post", post);
+                            html_posts = html_posts + '<div class="post-item" <div><h6>' + post.user + '</h6></div>';
+                            html_posts = html_posts + "<div>" + post.message + "</div>";
+                            html_posts = html_posts + "<div>" + post.timestamp + "</div><hr></div>";
+                        }
+                        if (html_posts === "") {
+                            html_posts = "There are no posts yet! Hurry up to post the first message"
+                        }
+                        return (html_posts)
+                    };
+  
+                    //render-list = () => {
+                    //this.setState(state => ({
+                    //    count: state.count + 1
+                    //}));
+                    //}
+                }
+
+                ReactDOM.render(<PostList />, document.querySelector("#post-list"));
+            </script>
+        </div>
     </div>
-    <div data-page="profile">
+    <div id="profile">
     </div>
 {% endblock %}

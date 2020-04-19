@@ -1,15 +1,15 @@
-
-#allposts {
-    padding-top : 5px;
-    padding-left : 10px;
-    padding-right : 10px;
+#allposts,
+#profile {
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-
 div.box {
-    border: 1px solid #D4D4D4; 
-    margin-top : 5px;
-    padding-top : 5px;
-    padding-left : 10px;
-    padding-right : 10px;
+  border: 1px solid #d4d4d4;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

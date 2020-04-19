@@ -217,7 +217,7 @@ function load_posts(username, follow_flag, offset) {
               <button type="button" onClick="load_profile('${username}')" class="btn btn-link">${username}</button>
             </h6>
           </div>         
-          <div id="post-item-message-${id}"><pre>${message}</pre></div>          
+          <div id="post-item-message-${id}">${message}</div>          
           <div>${timestamp}</div>
           <div>Likes:</div><div id="post-item-qtdlikes-${id}">${likes}</div>
           <div id="post-item-btnliked-${id}">${btn_liked}</div>
